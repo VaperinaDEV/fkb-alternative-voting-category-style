@@ -9,7 +9,7 @@ export default EmberObject.extend({
   @discourseComputed()
   showCommentIcon() {
     const route = router.currentRoute;
-    if (this.site.desktopView && route.params && route.params.category_slug_path_with_id) {
+    if (route.params && route.params.category_slug_path_with_id) {
       const splitCatPath = route.params.category_slug_path_with_id.split("/");
       return votingCategories.some(
         (category) => category === splitCatPath[splitCatPath.length - 1]
