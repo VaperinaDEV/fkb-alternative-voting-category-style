@@ -1,3 +1,0 @@
-{{#if view.showCommentIcon}}
-  {{d-icon 'far-comment'}}
-{{/if}}
