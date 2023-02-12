@@ -23,6 +23,9 @@
       flex-direction: column;
       color: var(--primary);
       padding: 8px 0;
+      .mobile-view & {
+        padding: 6px 0;
+      }
       border: 1px solid var(--primary-low);
       right: 1em;
       border-radius: var(--d-default-border-radius);
