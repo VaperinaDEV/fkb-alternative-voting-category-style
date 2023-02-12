@@ -10,7 +10,6 @@ const votingCategories = settings.voting_categories.split("|");
 export default apiInitializer("1.1", (api) => {
   api.modifyClass("component:topic-list-item", {
     pluginId: "discourse-alternative-voting-category-style",
-    excerptsRouter: service("router"),
     votesLeft: alias("currentUser.votes_left"),
     userVoted: alias("topic.user_voted"),
 
@@ -21,13 +20,6 @@ export default apiInitializer("1.1", (api) => {
         classList += " non-voting";
       }
       return classList;
-    },
-    @discourseComputed("excerptsRouter.currentRoute.attributes.category.id")
-    expandPinned(currentCategoryId) {
-      return currentCategoryId && (settings.include_excerpts || settings.vote_from_topic_list) &&
-        votingCategories.some((c) => c === currentCategoryId.toString())
-        ? true
-        : this._super();
     },
     click(e) {
       const target = e.target;
