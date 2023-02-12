@@ -5,7 +5,18 @@
 }
 
 .voting-category.list-container {
-  .topic-list-item:not(.non-voting) {
+  
+  .badge-wrapper {
+    display: none;
+  }
+  
+  .topic-list-item:not(.non-voting) {  
+    .discourse-tags {
+      .list-vote-count {
+        display: none;
+      }
+    }
+  
     .vote-count-before-title {
       display: flex;
       justify-content: center;
@@ -19,6 +30,7 @@
       height: 30px;
       width: 45px;
       position: absolute;
+      overflow: hidden;
 
       .d-icon {
         font-size: var(--font-up-6);
@@ -33,7 +45,6 @@
       .topic-list-vote-button {
         display: flex;
         justify-content: center;
-        border-radius: var(--d-default-border-radius) var(--d-default-border-radius) 0 0;
         @if $vote_from_topic_list == "false" {
           cursor: default;
         }
