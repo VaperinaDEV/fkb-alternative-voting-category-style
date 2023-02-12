@@ -22,7 +22,7 @@
       justify-content: center;
       flex-direction: column;
       color: var(--primary);
-      padding: 10px 0;
+      padding: 8px 0;
       border: 1px solid var(--primary-low);
       right: 1em;
       border-radius: var(--d-default-border-radius);
@@ -34,7 +34,7 @@
 
       .d-icon {
         font-size: var(--font-up-6);
-        color: var(--primary-low);
+        color: var(--primary-300);
         display: flex;
         align-self: center;
         height: 40px;
@@ -47,6 +47,12 @@
         justify-content: center;
         @if $vote_from_topic_list == "false" {
           cursor: default;
+        }
+        &:focus {
+          background: transparent;
+        }
+        &:hover:not(.disabled) {
+          background: var(--primary-very-low);
         }
         &:not(.can-vote) .d-icon {
           color: var(--tertiary);
