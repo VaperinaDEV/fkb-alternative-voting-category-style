@@ -9,7 +9,7 @@ const router = getOwner(this).lookup("router:main");
 export default EmberObject.extend({
   showVoteCount() {
     const route = router.currentRoute;
-    if (this.view.site.desktopView && this.topic.can_vote && route.params?.category_slug_path_with_id) {
+    if (this.topic.can_vote && route.params?.category_slug_path_with_id) {
       document
         .querySelector(".list-container")
         .classList.add("voting-category");
