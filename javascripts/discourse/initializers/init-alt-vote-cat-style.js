@@ -1,6 +1,5 @@
 import { ajax } from "discourse/lib/ajax";
 import { apiInitializer } from "discourse/lib/api";
-import { inject as service } from "@ember/service";
 import { alias } from "@ember/object/computed";
 import discourseComputed from "discourse-common/utils/decorators";
 import I18n from "I18n";
