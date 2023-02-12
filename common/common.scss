@@ -5,90 +5,40 @@
 }
 
 .voting-category.list-container {
-  @if $use_compact_width == "true" {
-    max-width: $small-width;
-  }
-
-  margin: 0 auto;
-
-  .posters,
-  .views,
-  .activity,
-  .badge-wrapper {
-    display: none;
-  }
-
   .topic-list-item:not(.non-voting) {
-    .link-bottom-line + .topic-excerpt {
-      margin-left: 65px;
-      font-size: var(--font-down-2);
-      .topic-excerpt-more {
-        font-weight: bold;
-      }
-    }
-
-    td.main-link {
-      display: flex;
-      flex-direction: column;
-      min-height: 52px;
-    }
-
-    .link-top-line {
-      display: flex;
-    }
-
-    .title.raw-link.raw-topic-link {
-      display: block; // prevents wrapping on top of vote count
-      padding: 0;
-      margin-left: 65px;
-    }
-
-    .discourse-tags {
-      margin-left: 65px;
-
-      .discourse-tag {
-        margin: .35em 0;
-        // Hide commma
-        &:after {
-          display: none;
-        }
-      }
-      .list-vote-count {
-        display: none;
-      }
-    }
-
     .vote-count-before-title {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      color: $primary;
+      color: var(--primary);
       padding: 10px 0;
-      border: 1px solid $primary-low;
-      border-radius: 5px;
+      border: 1px solid var(--primary-low);
+      right: 1em;
+      border-radius: var(--d-default-border-radius);
       text-align: center;
       height: 30px;
       width: 45px;
       position: absolute;
 
-      .svg-icon {
-        font-size: $font-up-6;
-        color: $primary-low;
+      .d-icon {
+        font-size: var(--font-up-6);
+        color: var(--primary-low);
         display: flex;
         align-self: center;
         height: 40px;
-        margin: -10px;
+        margin: -8px;
         pointer-events: none;
       }
 
       .topic-list-vote-button {
         display: flex;
         justify-content: center;
+        border-radius: var(--d-default-border-radius) var(--d-default-border-radius) 0 0;
         @if $vote_from_topic_list == "false" {
           cursor: default;
         }
-        &:not(.can-vote) .svg-icon {
-          color: $tertiary;
+        &:not(.can-vote) .d-icon {
+          color: var(--tertiary);
         }
         &.disabled {
           cursor: default;
@@ -102,11 +52,10 @@
         pointer-events: none;
       }
     }
-
-    .topic-statuses {
-      margin-left: 65px;
-      & + .title.raw-link.raw-topic-link {
-        margin: 0;
+    
+    .posts-map.badge-posts {
+      .d-icon:first-child {
+        display: none;
       }
     }
   }
